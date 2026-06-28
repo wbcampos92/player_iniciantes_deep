@@ -3,14 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Iniciantes IASD Foz - Player</title>
+    <title>Iniciantes IASD Foz</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: #0a1628;
@@ -20,7 +15,6 @@
             align-items: center;
             padding: 12px;
         }
-
         .app {
             max-width: 780px;
             width: 100%;
@@ -30,15 +24,12 @@
             box-shadow: 0 20px 50px rgba(0,0,0,0.7), 0 0 0 1px rgba(212, 175, 55, 0.2);
             border: 1px solid rgba(212, 175, 55, 0.25);
         }
-
-        /* CABEÇALHO */
         .header {
             text-align: center;
             margin-bottom: 18px;
             padding-bottom: 14px;
             border-bottom: 2px solid rgba(212, 175, 55, 0.2);
         }
-
         .header h1 {
             font-size: 1.8rem;
             font-weight: 800;
@@ -46,7 +37,6 @@
             text-shadow: 0 2px 15px rgba(212, 175, 55, 0.15);
             letter-spacing: 0.5px;
         }
-
         .header h1 small {
             font-size: 0.6rem;
             font-weight: 400;
@@ -55,15 +45,12 @@
             margin-top: 4px;
             letter-spacing: 2px;
         }
-
         .header .sub {
             color: #8aadc7;
             font-size: 0.8rem;
             margin-top: 2px;
             letter-spacing: 1px;
         }
-
-        /* PLAYER */
         .player-wrapper {
             position: relative;
             width: 100%;
@@ -75,7 +62,6 @@
             box-shadow: 0 8px 30px rgba(0,0,0,0.6);
             border: 1px solid rgba(212, 175, 55, 0.15);
         }
-
         .player-wrapper iframe {
             position: absolute;
             top: 0;
@@ -84,8 +70,6 @@
             height: 100%;
             border: none;
         }
-
-        /* CONTROLES */
         .controls {
             display: flex;
             align-items: center;
@@ -94,19 +78,16 @@
             gap: 10px;
             flex-wrap: wrap;
         }
-
         .controls .now-playing {
             color: #b8cfe0;
             font-size: 0.85rem;
             flex: 1;
             min-width: 120px;
         }
-
         .controls .now-playing strong {
             color: #d4af37;
             font-weight: 600;
         }
-
         .controls .btn-shuffle {
             background: rgba(212, 175, 55, 0.12);
             border: 1px solid rgba(212, 175, 55, 0.25);
@@ -119,17 +100,13 @@
             font-weight: 600;
             letter-spacing: 0.5px;
         }
-
         .controls .btn-shuffle:hover {
             background: rgba(212, 175, 55, 0.25);
             transform: scale(1.02);
         }
-
-        /* LISTA */
         .playlist-section {
             margin-top: 18px;
         }
-
         .playlist-header {
             display: flex;
             justify-content: space-between;
@@ -139,13 +116,11 @@
             border-bottom: 1px solid rgba(255,255,255,0.05);
             font-size: 0.85rem;
         }
-
         .playlist-header span:first-child {
             color: #d4af37;
             font-weight: 600;
             letter-spacing: 0.5px;
         }
-
         .playlist-header .count {
             background: rgba(212, 175, 55, 0.12);
             padding: 2px 14px;
@@ -153,7 +128,6 @@
             font-size: 0.7rem;
             color: #d4af37;
         }
-
         .playlist-scroll {
             max-height: 300px;
             overflow-y: auto;
@@ -162,17 +136,13 @@
             scrollbar-width: thin;
             scrollbar-color: #d4af37 transparent;
         }
-
         .playlist-scroll::-webkit-scrollbar {
             width: 4px;
         }
-
         .playlist-scroll::-webkit-scrollbar-thumb {
             background: #d4af37;
             border-radius: 10px;
         }
-
-        /* ITEM DA LISTA */
         .playlist-item {
             display: flex;
             align-items: center;
@@ -186,27 +156,22 @@
             border: 1px solid transparent;
             color: #b0c8da;
         }
-
         .playlist-item:hover {
             background: rgba(212, 175, 55, 0.06);
             border-color: rgba(212, 175, 55, 0.1);
         }
-
         .playlist-item.active {
             background: rgba(212, 175, 55, 0.12);
             border-color: rgba(212, 175, 55, 0.3);
         }
-
         .playlist-item.active .idx {
             background: #d4af37;
             color: #0a1628;
             font-weight: 700;
         }
-
         .playlist-item.active .title {
             color: #fff;
         }
-
         .idx {
             min-width: 26px;
             height: 26px;
@@ -221,14 +186,12 @@
             flex-shrink: 0;
             transition: 0.2s;
         }
-
         .title {
             font-size: 0.9rem;
             line-height: 1.3;
             flex: 1;
             word-break: break-word;
         }
-
         .duration {
             font-size: 0.7rem;
             color: #5a7a92;
@@ -237,15 +200,12 @@
             padding: 2px 10px;
             border-radius: 20px;
         }
-
-        /* LOADING */
         .loading {
             text-align: center;
             padding: 30px 0;
             color: #5a7a92;
             font-size: 0.9rem;
         }
-
         .loading .spinner {
             display: inline-block;
             width: 24px;
@@ -256,12 +216,9 @@
             animation: spin 0.8s linear infinite;
             margin-bottom: 10px;
         }
-
         @keyframes spin {
             to { transform: rotate(360deg); }
         }
-
-        /* RODAPÉ */
         .footer {
             margin-top: 20px;
             text-align: center;
@@ -271,13 +228,10 @@
             border-top: 1px solid rgba(255,255,255,0.04);
             padding-top: 16px;
         }
-
         .footer strong {
             color: rgba(212, 175, 55, 0.4);
             font-weight: 400;
         }
-
-        /* RESPONSIVO */
         @media (max-width: 480px) {
             .app { padding: 14px 10px 18px; }
             .header h1 { font-size: 1.4rem; }
@@ -290,246 +244,252 @@
 <body>
 
 <div class="app">
-    <!-- CABEÇALHO -->
     <div class="header">
-        <h1>
-            🎵 Iniciantes
-            <small>IASD Foz</small>
-        </h1>
+        <h1>🎵 Iniciantes <small>IASD Foz</small></h1>
         <div class="sub">3° Trimestre · Playlist Oficial</div>
     </div>
 
-    <!-- PLAYER -->
     <div class="player-wrapper">
         <iframe id="player" src="https://www.youtube.com/embed/videoseries?list=PL9uRnOcPI3e0GisU6e4SY3vw62EzrUmDF&autoplay=0&rel=0" allowfullscreen></iframe>
     </div>
 
-    <!-- CONTROLES -->
     <div class="controls">
-        <div class="now-playing">
-            🎶 <strong id="nowPlaying">Carregando...</strong>
-        </div>
+        <div class="now-playing">🎶 <strong id="nowPlaying">Carregando...</strong></div>
         <button class="btn-shuffle" id="shuffleBtn">🔀 Aleatório</button>
     </div>
 
-    <!-- LISTA -->
     <div class="playlist-section">
         <div class="playlist-header">
             <span>📋 Lista de Músicas</span>
-            <span class="count" id="videoCount">14 vídeos</span>
+            <span class="count" id="videoCount">Carregando...</span>
         </div>
         <div class="playlist-scroll" id="playlistContainer">
-            <div class="loading">
-                <div class="spinner"></div>
-                Carregando lista...
-            </div>
+            <div class="loading"><div class="spinner"></div>Buscando vídeos...</div>
         </div>
     </div>
 
-    <div class="footer">
-        <strong>♫ Iniciantes IASD Foz</strong> · Todos os direitos reservados
-    </div>
+    <div class="footer"><strong>♫ Iniciantes IASD Foz</strong> · Todos os direitos reservados</div>
 </div>
 
 <script>
-// ====================================================
-// LISTA DE VÍDEOS DA PLAYLIST (extraída manualmente)
-// ====================================================
-const PLAYLIST_VIDEOS = [
-    { id: "e0Z6p0nZ1QE", title: "01 - A Alegria do Senhor" },
-    { id: "f1H7q1rY2SF", title: "02 - Cantarei do Amor de Deus" },
-    { id: "g2I8r2sZ3TG", title: "03 - Deus é Fiel" },
-    { id: "h3J9s3tA4UH", title: "04 - Ele É Exaltado" },
-    { id: "i4K0t4uB5VI", title: "05 - Eu Te Louvarei" },
-    { id: "j5L1u5vC6WJ", title: "06 - Glória a Deus" },
-    { id: "k6M2v6wD7XK", title: "07 - Grande é o Senhor" },
-    { id: "l7N3w7xE8YL", title: "08 - Jesus é a Vida" },
-    { id: "m8O4x8yF9ZM", title: "09 - Meu Coração é Teu" },
-    { id: "n9P5y9zG0AN", title: "10 - O Amor de Deus" },
-    { id: "o0Q6z0aH1BO", title: "11 - O Poder da Cruz" },
-    { id: "p1R7a1bI2CP", title: "12 - Santo És Tu" },
-    { id: "q2S8b2cJ3DQ", title: "13 - Te Adoramos" },
-    { id: "r3T9c3dK4ER", title: "14 - Uma Nova Manhã" }
-];
+// ============================================================
+// CONFIGURAÇÕES
+// ============================================================
+const PLAYLIST_ID = 'PL9uRnOcPI3e0GisU6e4SY3vw62EzrUmDF';
+const PROXY_URL = 'https://api.allorigins.win/raw?url='; // Proxy CORS gratuito
 
-// ====================================================
+// ============================================================
 // ELEMENTOS DOM
-// ====================================================
+// ============================================================
 const player = document.getElementById('player');
 const playlistContainer = document.getElementById('playlistContainer');
 const nowPlaying = document.getElementById('nowPlaying');
 const shuffleBtn = document.getElementById('shuffleBtn');
 const videoCount = document.getElementById('videoCount');
 
-// ====================================================
-// VARIÁVEIS
-// ====================================================
+// ============================================================
+// ESTADO
+// ============================================================
+let videoList = [];          // Array com { id, title }
 let currentIndex = 0;
 let shuffled = false;
+let currentList = [];        // Lista atualmente exibida (normal ou shuffle)
 
-// ====================================================
-// FUNÇÕES
-// ====================================================
+// ============================================================
+// FUNÇÃO: Buscar vídeos via feed RSS (com proxy CORS)
+// ============================================================
+async function fetchPlaylistFromRSS() {
+    try {
+        const rssUrl = `https://www.youtube.com/feeds/videos.xml?playlist_id=${PLAYLIST_ID}`;
+        const response = await fetch(PROXY_URL + encodeURIComponent(rssUrl));
+        if (!response.ok) throw new Error('Erro ao buscar feed');
 
-// Carrega um vídeo específico
+        const text = await response.text();
+        const parser = new DOMParser();
+        const xml = parser.parseFromString(text, 'text/xml');
+
+        // Verifica se houve erro de parsing
+        if (xml.querySelector('parsererror')) throw new Error('Erro no XML');
+
+        const entries = xml.querySelectorAll('entry');
+        const items = [];
+        entries.forEach(entry => {
+            const id = entry.querySelector('yt\\:videoId, videoId')?.textContent?.trim();
+            const title = entry.querySelector('title')?.textContent?.trim();
+            if (id && title) {
+                items.push({ id, title });
+            }
+        });
+
+        if (items.length === 0) throw new Error('Nenhum vídeo encontrado');
+        return items;
+    } catch (error) {
+        console.warn('Falha no RSS, usando fallback:', error);
+        return null; // Fallback será acionado
+    }
+}
+
+// ============================================================
+// FALLBACK: Usar a playlist com índices (títulos genéricos)
+// ============================================================
+function getFallbackList() {
+    // Cria 14 itens com títulos genéricos
+    const titles = [
+        'Abertura', 'Louvor 1', 'Louvor 2', 'Louvor 3', 'Louvor 4',
+        'Louvor 5', 'Louvor 6', 'Louvor 7', 'Louvor 8', 'Louvor 9',
+        'Louvor 10', 'Louvor 11', 'Louvor 12', 'Encerramento'
+    ];
+    return titles.map((title, i) => ({
+        id: null, // sem ID individual
+        title: `${i+1}. ${title}`
+    }));
+}
+
+// ============================================================
+// CARREGAR VÍDEO (individual ou por índice)
+// ============================================================
 function loadVideo(index) {
-    const video = PLAYLIST_VIDEOS[index];
-    if (!video) return;
+    const list = shuffled ? currentList : videoList; // usa a lista atual
+    if (!list || index >= list.length) return;
 
+    const video = list[index];
     currentIndex = index;
-    const url = `https://www.youtube.com/embed/${video.id}?autoplay=1&rel=0`;
-    player.src = url;
 
-    // Atualiza "tocando agora"
-    nowPlaying.textContent = video.title;
+    if (video.id) {
+        // Tem ID individual → carrega o vídeo específico
+        player.src = `https://www.youtube.com/embed/${video.id}?autoplay=1&rel=0`;
+    } else {
+        // Fallback: usa a playlist com índice (0-based)
+        player.src = `https://www.youtube.com/embed/videoseries?list=${PLAYLIST_ID}&index=${index}&autoplay=1&rel=0`;
+    }
 
-    // Destaca o item na lista
+    nowPlaying.textContent = video.title || `Música ${index+1}`;
+
+    // Destaca o item ativo
     document.querySelectorAll('.playlist-item').forEach((el, i) => {
         el.classList.toggle('active', i === index);
     });
 
     // Salva no localStorage
     try {
-        localStorage.setItem('iasd_last_video', JSON.stringify({ index, video }));
+        localStorage.setItem('iasd_last', JSON.stringify({ index, video }));
     } catch(e) {}
 }
 
-// Renderiza a lista de vídeos
-function renderPlaylist(videos) {
+// ============================================================
+// RENDERIZAR LISTA
+// ============================================================
+function renderList(items) {
     playlistContainer.innerHTML = '';
+    if (!items || items.length === 0) {
+        playlistContainer.innerHTML = '<div style="color:#5a7a92; padding:20px; text-align:center;">Nenhum vídeo disponível</div>';
+        videoCount.textContent = '0 vídeos';
+        return;
+    }
 
-    videos.forEach((video, index) => {
+    videoCount.textContent = `${items.length} vídeos`;
+
+    items.forEach((video, index) => {
         const div = document.createElement('div');
         div.className = 'playlist-item';
         if (index === currentIndex) div.classList.add('active');
 
         div.innerHTML = `
             <span class="idx">${index + 1}</span>
-            <span class="title">${video.title}</span>
+            <span class="title">${video.title || `Vídeo ${index+1}`}</span>
             <span class="duration">▶</span>
         `;
 
         div.addEventListener('click', () => {
+            // Se a lista atual é embaralhada, precisamos encontrar o índice correto na lista original?
+            // Mas loadVideo usa o índice da lista atual, então ok.
             loadVideo(index);
         });
 
         playlistContainer.appendChild(div);
     });
-
-    videoCount.textContent = `${videos.length} vídeos`;
 }
 
-// Embaralha a lista
-function shuffleArray(arr) {
-    const shuffled = [...arr];
-    for (let i = shuffled.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+// ============================================================
+// INICIALIZAÇÃO
+// ============================================================
+async function init() {
+    // Tenta buscar do RSS
+    let items = await fetchPlaylistFromRSS();
+
+    // Se falhou, usa fallback
+    if (!items) {
+        items = getFallbackList();
     }
-    return shuffled;
+
+    videoList = items;
+    currentList = [...videoList]; // cópia
+
+    // Restaura última música
+    let startIndex = 0;
+    try {
+        const saved = localStorage.getItem('iasd_last');
+        if (saved) {
+            const data = JSON.parse(saved);
+            const found = videoList.findIndex(v => v.id === data.video?.id);
+            if (found !== -1) startIndex = found;
+        }
+    } catch(e) {}
+
+    renderList(currentList);
+    loadVideo(startIndex);
 }
 
-// Troca entre ordem normal e aleatória
+// ============================================================
+// EMBARALHAR
+// ============================================================
+function shuffleArray(arr) {
+    const copy = [...arr];
+    for (let i = copy.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [copy[i], copy[j]] = [copy[j], copy[i]];
+    }
+    return copy;
+}
+
 function toggleShuffle() {
     shuffled = !shuffled;
     shuffleBtn.textContent = shuffled ? '🔀 Aleatório ON' : '🔀 Aleatório';
 
-    const videos = shuffled ? shuffleArray(PLAYLIST_VIDEOS) : PLAYLIST_VIDEOS;
-    renderPlaylist(videos);
-
-    // Se estiver embaralhado, carrega o primeiro
-    if (shuffled && videos.length > 0) {
-        // Encontra o índice original do vídeo atual
-        const currentVideo = PLAYLIST_VIDEOS[currentIndex];
-        if (currentVideo) {
-            const newIndex = videos.findIndex(v => v.id === currentVideo.id);
-            if (newIndex !== -1) {
-                // Atualiza currentIndex para o novo índice
-                currentIndex = newIndex;
-                // Mas a função loadVideo usa o índice da lista atual
-                // Então precisamos carregar pelo ID
-                const url = `https://www.youtube.com/embed/${currentVideo.id}?autoplay=1&rel=0`;
-                player.src = url;
-                nowPlaying.textContent = currentVideo.title;
-                document.querySelectorAll('.playlist-item').forEach((el, i) => {
-                    el.classList.toggle('active', i === newIndex);
-                });
-            }
-        }
+    if (shuffled) {
+        currentList = shuffleArray(videoList);
+    } else {
+        currentList = [...videoList];
     }
+
+    // Ajusta o índice atual para o mesmo vídeo (se possível)
+    const currentVideo = videoList[currentIndex];
+    if (currentVideo) {
+        const newIndex = currentList.findIndex(v => v.id === currentVideo.id);
+        if (newIndex !== -1) {
+            currentIndex = newIndex;
+        } else {
+            currentIndex = 0;
+        }
+    } else {
+        currentIndex = 0;
+    }
+
+    renderList(currentList);
+    // Recarrega o vídeo atual com o novo índice
+    loadVideo(currentIndex);
 }
 
-// ====================================================
-// INICIALIZAÇÃO
-// ====================================================
-
-// Tenta restaurar a última música tocada
-let startIndex = 0;
-try {
-    const saved = localStorage.getItem('iasd_last_video');
-    if (saved) {
-        const data = JSON.parse(saved);
-        const found = PLAYLIST_VIDEOS.findIndex(v => v.id === data.video?.id);
-        if (found !== -1) startIndex = found;
-    }
-} catch(e) {}
-
-// Carrega a lista e o vídeo inicial
-renderPlaylist(PLAYLIST_VIDEOS);
-loadVideo(startIndex);
-
-// Evento do botão aleatório
+// ============================================================
+// EVENTOS
+// ============================================================
 shuffleBtn.addEventListener('click', toggleShuffle);
 
-// ====================================================
-// FALBACK: Se os IDs acima não funcionarem, 
-// usa a playlist completa com índice
-// ====================================================
-
-// Se após 5 segundos o player não carregar, tenta via playlist
-setTimeout(() => {
-    // Verifica se o player está com erro (não temos como detectar diretamente)
-    // Mas se o usuário clicar em um item e não funcionar, 
-    // o fallback é carregar pela playlist
-}, 5000);
-
-// Fallback nos cliques: se o ID não funcionar, usa a playlist com índice
-// Sobrescreve a função loadVideo com fallback
-const originalLoadVideo = loadVideo;
-loadVideo = function(index) {
-    const video = PLAYLIST_VIDEOS[index];
-    if (!video) return;
-
-    currentIndex = index;
-
-    // Tenta carregar pelo ID
-    const url = `https://www.youtube.com/embed/${video.id}?autoplay=1&rel=0`;
-    player.src = url;
-
-    nowPlaying.textContent = video.title;
-
-    document.querySelectorAll('.playlist-item').forEach((el, i) => {
-        el.classList.toggle('active', i === index);
-    });
-
-    // Salva no localStorage
-    try {
-        localStorage.setItem('iasd_last_video', JSON.stringify({ index, video }));
-    } catch(e) {}
-
-    // FALBACK: Se em 8 segundos o vídeo não carregar, tenta pela playlist
-    setTimeout(() => {
-        // Verifica se o player está mostrando erro (não temos API para isso)
-        // Então usamos um truque: se o título não mudou, pode ser que travou
-        // Mas vamos confiar que o usuário vai clicar de novo se necessário
-    }, 8000);
-};
-
-// Fallback manual: se o vídeo não carregar, tentar com a playlist
-// O usuário pode clicar duas vezes se necessário
-
+// ============================================================
+// INICIAR
+// ============================================================
+init();
 console.log('🎵 Player Iniciantes IASD Foz carregado!');
-console.log(`📋 ${PLAYLIST_VIDEOS.length} vídeos disponíveis`);
 </script>
 </body>
 </html>
